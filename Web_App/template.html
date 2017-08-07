@@ -1,0 +1,29 @@
+<html>
+<body>
+<div>
+<input type="text" id="search">
+<button onclick="search_user()">Search</button>
+</div>
+</body>
+<script>
+	
+
+
+var list = []
+list.push("aniket","ashwin","asdfgh")
+
+function search_user(){
+	var user = document.getElementById("search").value ;
+	//console.log(user)
+	for (i in list){
+		//console.log(list[i])
+		if(list[i]===user)	{
+			console.log(list[i])
+		}
+
+	}
+
+}
+
+</script>
+</html>

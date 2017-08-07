@@ -1,0 +1,261 @@
+<?php
+    session_start();
+    require "init.php";
+
+    $name = $_SESSION["name"];
+	
+	$sql = "select image from users where username = $name";
+	
+	$res = mysqli_query($con,$sql);
+	
+	$img = mysqli_fetch_assoc($res);
+	
+	echo $img;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<title>Quiz Result</title>
+    
+    
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="container-fluid">
+        
+        <div class="jumbotron" align="left" style="background-color: #3cba54;"><h1 style="color: #FFF; font-weight: 200;">Analysis</h1></div>
+        
+        <div class="row">
+            
+            <div class="col-md-12">
+                
+                <p style="font-size: 35px; margin-left: 20px; color: #3cba54;">Attendence &nbsp;&nbsp;<span style="color: gray;"><?php echo $count; ?></span></p>
+            </div>
+        </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">1</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor1 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per1 ?>%</span></p>
+            </div>
+        </div>
+            <br>
+            <br>
+            <br>
+            
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">2</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor2 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per2 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">3</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor3 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per3 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">4</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor4 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per4 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">5</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor5 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per5 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">6</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor6 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per6 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">7</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor7 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per7 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+            
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">8</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor8 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per8 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">9</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor9 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per9 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+        <div class="row"> 
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Question <span style="color: gray;">10</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Correct Attempts &nbsp;&nbsp;<span style="color: gray;"><?php echo $cor10 ?></span></p>
+            </div>
+            
+            <div class="col-md-4">
+            
+                <p style="font-size: 25px; margin-left: 20px; color: #3cba54;">Percentage Correctness &nbsp;&nbsp;<span style="color: gray;"><?php echo $per10 ?>%</span></p>
+            </div>
+            
+        </div>
+            <br>
+            <br>
+            <br>
+        
+    </div>
+</body>
+</html>
